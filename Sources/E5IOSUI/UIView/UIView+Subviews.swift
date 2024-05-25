@@ -37,14 +37,29 @@ extension UIView{
     }
     
     @discardableResult
-    func addSubviewAtLeft(_ subview: UIView, leadingView: UIView? = nil, insets: UIEdgeInsets = Insets.defaultInsets) -> UIView{
+    public func addSubviewAtTop(_ subview: UIView, topView: UIView? = nil, insets: UIEdgeInsets = Insets.defaultInsets) -> UIView{
+        addSubview(subview)
+        subview.setAnchors(top: topView?.bottomAnchor ?? topAnchor, leading: leadingAnchor, trailing: trailingAnchor, insets: insets)
+        return subview
+    }
+    
+    @discardableResult
+    public func addSubviewAtTopCentered(_ subview: UIView, topView: UIView? = nil, insets: UIEdgeInsets = Insets.defaultInsets) -> UIView{
+        addSubview(subview)
+        subview.setAnchors(top: topView?.bottomAnchor ?? topAnchor, insets: insets)
+            .centerX(centerXAnchor)
+        return subview
+    }
+    
+    @discardableResult
+    public func addSubviewAtLeft(_ subview: UIView, leadingView: UIView? = nil, insets: UIEdgeInsets = Insets.defaultInsets) -> UIView{
         addSubview(subview)
         subview.setAnchors(top: topAnchor, leading: leadingView?.trailingAnchor ?? leadingAnchor, bottom: bottomAnchor, insets: insets)
         return subview
     }
     
     @discardableResult
-    func addSubviewAtRight(_ subview: UIView, trailingView: UIView? = nil, insets: UIEdgeInsets = Insets.defaultInsets) -> UIView{
+    public func addSubviewAtRight(_ subview: UIView, trailingView: UIView? = nil, insets: UIEdgeInsets = Insets.defaultInsets) -> UIView{
         addSubview(subview)
         subview.setAnchors(top: topAnchor, trailing: trailingView?.leadingAnchor ?? trailingAnchor, bottom: bottomAnchor, insets: insets)
         return subview
