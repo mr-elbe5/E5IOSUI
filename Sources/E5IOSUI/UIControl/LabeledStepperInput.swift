@@ -8,12 +8,12 @@ import Foundation
 
 import UIKit
 
-class LabeledStepperInput : UIView{
+open class LabeledStepperInput : UIView{
     
     private var label = UILabel()
     private var stepper = UIStepper()
     
-    var value: Int{
+    public var value: Int{
         get{
             return Int(stepper.value)
         }
@@ -22,7 +22,7 @@ class LabeledStepperInput : UIView{
         }
     }
     
-    func setupView(labelText: String, value: Int = 0){
+    open func setupView(labelText: String, value: Int = 0){
         label.text = labelText
         label.textAlignment = .left
         label.font = .preferredFont(forTextStyle: .headline)
@@ -38,7 +38,7 @@ class LabeledStepperInput : UIView{
         stepper.setAnchors(top: label.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, insets: .zero)
     }
     
-    func setMinMaxValue(minValue: Int, maxValue: Int){
+    open func setMinMaxValue(minValue: Int, maxValue: Int){
         stepper.minimumValue = Double(minValue)
         stepper.maximumValue = Double(maxValue)
     }

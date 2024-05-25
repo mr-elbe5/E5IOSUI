@@ -7,14 +7,15 @@
 import Foundation
 
 import UIKit
+import E5Data
 
-class LabeledDatePicker : UIView{
+open class LabeledDatePicker : UIView{
     
     private var label = UILabel()
     private var pickerContainer = UIView()
     private var datePicker = UIDatePicker()
     
-    var date: Date{
+    public var date: Date{
         get{
             return datePicker.date
         }
@@ -23,7 +24,7 @@ class LabeledDatePicker : UIView{
         }
     }
     
-    func setupView(labelText: String, date: Date = Date.localDate){
+    open func setupView(labelText: String, date: Date = Date.localDate){
         label.text = labelText
         label.textAlignment = .left
         label.font = .preferredFont(forTextStyle: .headline)
@@ -44,7 +45,7 @@ class LabeledDatePicker : UIView{
         pickerContainer.setAnchors(top: label.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, insets: narrowInsets)
     }
     
-    func setMinMaxDate(minDate: Date, maxDate: Date){
+    public func setMinMaxDate(minDate: Date, maxDate: Date){
         datePicker.minimumDate = minDate
         datePicker.maximumDate = maxDate
     }

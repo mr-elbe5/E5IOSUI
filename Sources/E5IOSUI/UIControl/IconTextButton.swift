@@ -7,11 +7,11 @@
 import Foundation
 import UIKit
 
-class IconTextButton : UIButton{
+open class IconTextButton : UIButton{
     
-    var hasBorder: Bool
+    public var hasBorder: Bool
     
-    init(icon: String, text: String, tintColor: UIColor = .systemBlue, backgroundColor: UIColor? = .systemBackground, withBorder: Bool = true){
+    public init(icon: String, text: String, tintColor: UIColor = .systemBlue, backgroundColor: UIColor? = .systemBackground, withBorder: Bool = true){
         self.hasBorder = withBorder
         super.init(frame: .zero)
         setImage(UIImage(systemName: icon)?.withTintColor(tintColor, renderingMode: .alwaysOriginal), for: .normal)
@@ -26,11 +26,11 @@ class IconTextButton : UIButton{
         }
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override var intrinsicContentSize: CGSize{
+    override public var intrinsicContentSize: CGSize{
         if hasBorder{
             let size = getExtendedIntrinsicContentSize(originalSize: super.intrinsicContentSize)
             return CGSize(width: size.width + 2*defaultInset, height: size.height)

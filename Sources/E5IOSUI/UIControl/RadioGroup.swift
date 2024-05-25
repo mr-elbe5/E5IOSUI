@@ -6,36 +6,36 @@
 
 import UIKit
 
-protocol RadioGroupDelegate{
+public protocol RadioGroupDelegate{
     func valueDidChangeTo(idx: Int, value: String)
 }
 
-class RadioGroup: UIView{
+open class RadioGroup: UIView{
     
-    var selectedIndex : Int = -1
-    var selectedValue : String{
+    public var selectedIndex : Int = -1
+    public var selectedValue : String{
         if selectedIndex != -1{
             return radioViews[selectedIndex].title
         }
         return ""
     }
     
-    var radioViews = Array<RadioGroupButton>()
-    var stackView = UIStackView()
+    public var radioViews = Array<RadioGroupButton>()
+    public var stackView = UIStackView()
     
-    var delegate: RadioGroupDelegate? = nil
+    public var delegate: RadioGroupDelegate? = nil
     
-    init(){
+    public init(){
         super.init(frame: .zero)
         backgroundColor = .systemBackground
         setRoundedBorders()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(values: Array<String>, includingNobody: Bool = false){
+    open func setup(values: Array<String>, includingNobody: Bool = false){
         stackView.axis = .vertical
         stackView.alignment = .leading
         addSubviewFilling(stackView)
@@ -55,7 +55,7 @@ class RadioGroup: UIView{
         }
     }
     
-    func select(index: Int){
+    public func select(index: Int){
         selectedIndex = index
         for radioView in radioViews{
             radioView.isOn = radioView.index == index
@@ -66,7 +66,7 @@ class RadioGroup: UIView{
 
 extension RadioGroup: RadioGroupButtonDelegate{
     
-    func radioIsSelected(index: Int) {
+    public func radioIsSelected(index: Int) {
         selectedIndex = index
         for radioView in radioViews{
             radioView.isOn = radioView.index == index

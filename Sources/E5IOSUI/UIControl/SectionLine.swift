@@ -7,11 +7,11 @@
 import Foundation
 import UIKit
 
-class SectionLine: UIControl{
+open class SectionLine: UIControl{
     
-    var label: UILabel
+    public var label: UILabel
     
-    init(name: String, action: UIAction){
+    public init(name: String, action: UIAction){
         label = UILabel(text: name)
         super.init(frame: .zero)
         setGrayRoundedBorders(radius: 10)
@@ -22,7 +22,7 @@ class SectionLine: UIControl{
         addSubviewWithAnchors(linkButton, trailing: trailingAnchor, insets: wideInsets).centerY(centerYAnchor)
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

@@ -8,12 +8,12 @@ import Foundation
 
 import UIKit
 
-class LabeledTextInput : UIView, UITextFieldDelegate{
+open class LabeledTextInput : UIView, UITextFieldDelegate{
     
     private var label = UILabel()
     private var textField = UITextField()
     
-    var text: String{
+    public var text: String{
         get{
             return textField.text ?? ""
         }
@@ -22,7 +22,7 @@ class LabeledTextInput : UIView, UITextFieldDelegate{
         }
     }
     
-    func setupView(labelText: String, text: String = "", inline: Bool = false){
+    open func setupView(labelText: String, text: String = "", inline: Bool = false){
         label.text = labelText
         label.textAlignment = .left
         label.font = .preferredFont(forTextStyle: .headline)
@@ -46,11 +46,11 @@ class LabeledTextInput : UIView, UITextFieldDelegate{
         }
     }
     
-    func setSecureEntry(){
+    public func setSecureEntry(){
         textField.isSecureTextEntry = true
     }
     
-    func updateText(_ text: String){
+    public func updateText(_ text: String){
         textField.text = text
     }
     

@@ -7,11 +7,11 @@
 import Foundation
 import UIKit
 
-class IconButton : UIButton{
+open class IconButton : UIButton{
     
-    var hasBorder: Bool
+    public var hasBorder: Bool
     
-    init(icon: String, tintColor: UIColor = .systemBlue, backgroundColor: UIColor? = nil, withBorder: Bool = false){
+    public init(icon: String, tintColor: UIColor = .systemBlue, backgroundColor: UIColor? = nil, withBorder: Bool = false){
         self.hasBorder = withBorder
         super.init(frame: .zero)
         setImage(UIImage(systemName: icon)?.withTintColor(tintColor, renderingMode: .alwaysOriginal), for: .normal)
@@ -27,7 +27,7 @@ class IconButton : UIButton{
         }
     }
     
-    init(image: String, tintColor: UIColor = .systemBlue, backgroundColor: UIColor? = nil, withBorder: Bool = true){
+    public init(image: String, tintColor: UIColor = .systemBlue, backgroundColor: UIColor? = nil, withBorder: Bool = true){
         self.hasBorder = withBorder
         super.init(frame: .zero)
         setImage(UIImage(named: image), for: .normal)
@@ -41,15 +41,15 @@ class IconButton : UIButton{
         }
     }
     
-    func setIcon(icon: String, tintColor: UIColor = .systemBlue){
+    public func setIcon(icon: String, tintColor: UIColor = .systemBlue){
         setImage(UIImage(systemName: icon)?.withTintColor(tintColor, renderingMode: .alwaysOriginal), for: .normal)
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override var intrinsicContentSize: CGSize{
+    override public var intrinsicContentSize: CGSize{
         if hasBorder{
             let size = getExtendedIntrinsicContentSize(originalSize: super.intrinsicContentSize)
             return CGSize(width: size.width + 2*defaultInset, height: size.height)

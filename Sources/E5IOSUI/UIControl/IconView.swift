@@ -7,9 +7,9 @@
 import Foundation
 import UIKit
 
-class IconView : UIImageView{
+open class IconView : UIImageView{
     
-    init(icon: String, tintColor: UIColor = .label, backgroundColor: UIColor? = nil){
+    public init(icon: String, tintColor: UIColor = .label, backgroundColor: UIColor? = nil){
         super.init(frame: .zero)
         self.image = UIImage(systemName: icon)
         self.tintColor = tintColor
@@ -21,7 +21,7 @@ class IconView : UIImageView{
         }
     }
     
-    init(image: String, tintColor: UIColor = .label, backgroundColor: UIColor? = nil){
+    public init(image: String, tintColor: UIColor = .label, backgroundColor: UIColor? = nil){
         super.init(frame: .zero)
         self.image = UIImage(named: image)
         self.tintColor = tintColor
@@ -32,7 +32,7 @@ class IconView : UIImageView{
         }
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

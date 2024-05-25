@@ -8,12 +8,12 @@ import Foundation
 
 import UIKit
 
-class LabeledRadioGroup : UIView{
+open class LabeledRadioGroup : UIView{
     
-    var label = UILabel()
-    var radioGroup = RadioGroup()
+    public var label = UILabel()
+    public var radioGroup = RadioGroup()
     
-    var selectedIndex : Int{
+    public var selectedIndex : Int{
         get{
             radioGroup.selectedIndex
         }
@@ -22,7 +22,7 @@ class LabeledRadioGroup : UIView{
         }
     }
     
-    func setupView(labelText: String){
+    open func setupView(labelText: String){
         label.text = labelText
         label.textAlignment = .left
         label.font = .preferredFont(forTextStyle: .headline)

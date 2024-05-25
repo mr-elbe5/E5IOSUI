@@ -8,7 +8,7 @@ import Foundation
 
 import UIKit
 
-class TextareaInput : UITextView{
+open class TextareaInput : UITextView{
     
     private let placeholderTextView: UITextView = {
         let tv = UITextView()
@@ -21,7 +21,7 @@ class TextareaInput : UITextView{
         return tv
     }()
     
-    var placeholder: String? {
+    public var placeholder: String? {
         get {
             return placeholderTextView.text
         }
@@ -30,28 +30,28 @@ class TextareaInput : UITextView{
         }
     }
     
-    func setDefaults(placeholder : String = ""){
+    public func setDefaults(placeholder : String = ""){
         super.setDefaults()
         self.placeholder = placeholder
     }
     
-    override var contentInset: UIEdgeInsets {
+    override public var contentInset: UIEdgeInsets {
         didSet {
             placeholderTextView.contentInset = contentInset
         }
     }
     
-    func setText(_ text: String){
+    public func setText(_ text: String){
         self.text = text
         placeholderTextView.isHidden = !text.isEmpty
     }
     
-    func textDidChange() {
+    public func textDidChange() {
         invalidateIntrinsicContentSize()
         placeholderTextView.isHidden = !text.isEmpty
     }
     
-    override var intrinsicContentSize: CGSize {
+    override public var intrinsicContentSize: CGSize {
         var size = super.intrinsicContentSize
         if size.height == UIView.noIntrinsicMetric {
             layoutManager.glyphRange(for: textContainer)
@@ -62,7 +62,7 @@ class TextareaInput : UITextView{
 
 }
 
-class TextEditLayoutManager: NSLayoutManager{
+open class TextEditLayoutManager: NSLayoutManager{
     
 }
 

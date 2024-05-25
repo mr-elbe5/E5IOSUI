@@ -6,21 +6,21 @@
 
 import UIKit
 
-class CheckboxGroupView: UIView{
+open class CheckboxGroupView: UIView{
     
-    var selectedIndex : Int = -1
-    var selectedValue : String{
+    public var selectedIndex : Int = -1
+    public var selectedValue : String{
         if selectedIndex != -1{
             return checkboxViews[selectedIndex].title
         }
         return ""
     }
     
-    var onOffCheckbox = CheckboxGroupIcon()
-    var checkboxViews = Array<Checkbox>()
-    var stackView = UIStackView()
+    public var onOffCheckbox = CheckboxGroupIcon()
+    public var checkboxViews = Array<Checkbox>()
+    public var stackView = UIStackView()
     
-    var hasSelection: Bool{
+    public var hasSelection: Bool{
         for checkboxView in checkboxViews{
             if checkboxView.isOn{
                 return true
@@ -29,17 +29,17 @@ class CheckboxGroupView: UIView{
         return false
     }
     
-    init(){
+    public init(){
         super.init(frame: .zero)
         backgroundColor = .systemBackground
         setRoundedBorders()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(){
+    open func setup(){
         stackView.axis = .vertical
         stackView.alignment = .leading
         addSubviewFilling(stackView)
@@ -48,12 +48,12 @@ class CheckboxGroupView: UIView{
         stackView.addArrangedSubview(onOffCheckbox)
     }
     
-    func addCheckbox(cb: Checkbox){
+    public func addCheckbox(cb: Checkbox){
         checkboxViews.append(cb)
         stackView.addArrangedSubview(cb)
     }
     
-    func select(index: Int){
+    public func select(index: Int){
         selectedIndex = index
         for checkboxView in checkboxViews{
             checkboxView.isOn = checkboxView.index == index
@@ -64,7 +64,7 @@ class CheckboxGroupView: UIView{
 
 extension CheckboxGroupView: OnOffIconDelegate{
     
-    func onOffValueDidChange(icon: OnOffIcon) {
+    public func onOffValueDidChange(icon: OnOffIcon) {
         if icon == onOffCheckbox.checkboxIcon{
             for cb in checkboxViews{
                 cb.isOn = icon.isOn
@@ -74,10 +74,10 @@ extension CheckboxGroupView: OnOffIconDelegate{
     
 }
 
-class CheckboxGroupIcon: UIView{
+open class CheckboxGroupIcon: UIView{
     
-    var checkboxIcon = CheckboxIcon()
-    var isOn: Bool{
+    public var checkboxIcon = CheckboxIcon()
+    public var isOn: Bool{
         get{
             checkboxIcon.isOn
         }
@@ -86,7 +86,7 @@ class CheckboxGroupIcon: UIView{
         }
     }
     
-    func setup(isOn: Bool = false){
+    public func setup(isOn: Bool = false){
         self.isOn = isOn
         addSubviewFilling(checkboxIcon, insets: defaultInsets)
     }

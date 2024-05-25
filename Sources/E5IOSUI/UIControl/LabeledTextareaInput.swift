@@ -8,12 +8,12 @@ import Foundation
 
 import UIKit
 
-class LabeledTextareaInput : UIView, UITextViewDelegate{
+open class LabeledTextareaInput : UIView, UITextViewDelegate{
     
     private var label = UILabel()
     private var textView = TextareaInput(usingTextLayoutManager: false)
     
-    var text: String{
+    public var text: String{
         get{
             return textView.text ?? ""
         }
@@ -22,7 +22,7 @@ class LabeledTextareaInput : UIView, UITextViewDelegate{
         }
     }
     
-    func setupView(labelText: String, text: String = ""){
+    open func setupView(labelText: String, text: String = ""){
         label.text = labelText
         label.textAlignment = .left
         label.font = .preferredFont(forTextStyle: .headline)
@@ -38,11 +38,11 @@ class LabeledTextareaInput : UIView, UITextViewDelegate{
         textView.setAnchors(top: label.bottomAnchor, leading: leadingAnchor, trailing: trailingAnchor, bottom: bottomAnchor)
     }
     
-    func textViewDidChange(_ textView: UITextView){
+    public func textViewDidChange(_ textView: UITextView){
         self.textView.textDidChange()
     }
     
-    func updateText(_ text: String){
+    public func updateText(_ text: String){
         self.textView.text = text
     }
     

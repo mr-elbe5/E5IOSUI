@@ -9,7 +9,7 @@ import UIKit
 
 extension UINavigationController {
     
-    var previousViewController: UIViewController? {
+    public var previousViewController: UIViewController? {
        viewControllers.count > 1 ? viewControllers[viewControllers.count - 2] : nil
     }
     

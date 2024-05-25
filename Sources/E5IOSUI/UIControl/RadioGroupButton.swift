@@ -6,16 +6,16 @@
 
 import UIKit
 
-protocol RadioGroupButtonDelegate{
+public protocol RadioGroupButtonDelegate{
     func radioIsSelected(index: Int)
 }
 
-class RadioGroupButton: UIView{
+open class RadioGroupButton: UIView{
     
-    var label = UILabel()
-    var radioButton = RadioButton()
-    var index: Int = 0
-    var title: String{
+    public var label = UILabel()
+    public var radioButton = RadioButton()
+    public var index: Int = 0
+    public var title: String{
         get{
             label.text ?? ""
         }
@@ -23,7 +23,7 @@ class RadioGroupButton: UIView{
             label.text = newValue
         }
     }
-    var isOn: Bool{
+    public var isOn: Bool{
         get{
             radioButton.isOn
         }
@@ -32,9 +32,9 @@ class RadioGroupButton: UIView{
         }
     }
     
-    var delegate: RadioGroupButtonDelegate? = nil
+    public var delegate: RadioGroupButtonDelegate? = nil
     
-    func setup(title: String, index: Int, isOn: Bool = false){
+    open func setup(title: String, index: Int, isOn: Bool = false){
         self.index = index
         self.title = title
         self.isOn = isOn
@@ -47,25 +47,25 @@ class RadioGroupButton: UIView{
 
 extension RadioGroupButton: OnOffIconDelegate{
     
-    func onOffValueDidChange(icon: OnOffIcon) {
+    public func onOffValueDidChange(icon: OnOffIcon) {
         delegate?.radioIsSelected(index: index)
     }
     
 }
 
-class RadioButton: OnOffIcon{
+open class RadioButton: OnOffIcon{
     
-    init(isOn: Bool = false){
+    public init(isOn: Bool = false){
         super.init(offImage: UIImage(systemName: "circle")!, onImage: UIImage(systemName: "record.circle")!)
         onColor = .label
         offColor = .label
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func addAction(){
+    override public func addAction(){
         self.addAction(UIAction(){ action in
             if !self.isOn{
                 self.isOn = true

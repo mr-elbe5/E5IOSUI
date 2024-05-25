@@ -8,12 +8,12 @@ import Foundation
 
 import UIKit
 
-class LabeledCheckboxGroup : UIView{
+open class LabeledCheckboxGroup : UIView{
     
-    var label = UILabel()
-    var checkboxGroup = CheckboxGroupView()
+    public var label = UILabel()
+    public var checkboxGroup = CheckboxGroupView()
     
-    var selectedIndex : Int{
+    public var selectedIndex : Int{
         get{
             checkboxGroup.selectedIndex
         }
@@ -22,7 +22,7 @@ class LabeledCheckboxGroup : UIView{
         }
     }
     
-    func setupView(labelText: String){
+    open func setupView(labelText: String){
         label.text = labelText
         label.textAlignment = .left
         label.font = .preferredFont(forTextStyle: .headline)
@@ -36,7 +36,7 @@ class LabeledCheckboxGroup : UIView{
         checkboxGroup.setAnchors(top: label.bottomAnchor, leading: leadingAnchor, trailing: trailingAnchor, bottom: bottomAnchor, insets: narrowInsets)
     }
     
-    func addCheckbox(cb: Checkbox){
+    public func addCheckbox(cb: Checkbox){
         checkboxGroup.addCheckbox(cb: cb)
     }
     

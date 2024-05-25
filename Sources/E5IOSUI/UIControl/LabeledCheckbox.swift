@@ -7,9 +7,9 @@
 import Foundation
 import UIKit
 
-class LabeledCheckbox : Checkbox{
+open class LabeledCheckbox : Checkbox{
     
-    func setup(title: String, index: Int = 0, isOn: Bool = false){
+    open func setup(title: String, index: Int = 0, isOn: Bool = false){
         self.index = index
         self.title = title
         self.isOn = isOn
@@ -23,7 +23,7 @@ class LabeledCheckbox : Checkbox{
         vw.addSubviewFilling(checkboxIcon, insets: smallInsets)
     }
     
-    func setupInline(title: String, index: Int = 0, isOn: Bool = false){
+    open func setupInline(title: String, index: Int = 0, isOn: Bool = false){
         self.index = index
         self.title = title
         self.isOn = isOn

@@ -11,7 +11,7 @@ public protocol TouchDelegate{
     func touched(at relativePosition: CGPoint)
 }
 
-class ImageScrollView: UIScrollView, UIScrollViewDelegate{
+open class ImageScrollView: UIScrollView, UIScrollViewDelegate{
     
     public var image: UIImage
     public var imageView: UIImageView
