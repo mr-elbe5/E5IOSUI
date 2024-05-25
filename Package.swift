@@ -12,10 +12,15 @@ let package = Package(
             name: "E5IOSUI",
             targets: ["E5IOSUI"]),
     ],
+    dependencies: [
+        .package(
+            url: "https://git.elbe5cloud.de/miro/E5Data",
+            from: "1.0.0")
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "E5IOSUI"),
+            name: "E5IOSUI", dependencies: ["E5Data"]),
     ]
 )
