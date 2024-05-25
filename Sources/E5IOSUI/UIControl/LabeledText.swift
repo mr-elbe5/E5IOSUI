@@ -22,7 +22,7 @@ open class LabeledText : UIView{
         }
     }
     
-    open func setupView(labelText: String, text: String = "", isHorizontal : Bool = true){
+    open func setupView(labelText: String, text: String = "", inline : Bool = true){
         label.text = labelText
         label.textAlignment = .left
         label.font = .preferredFont(forTextStyle: .headline)
@@ -30,7 +30,7 @@ open class LabeledText : UIView{
         addSubview(label)
         textField.text = text
         addSubview(textField)
-        if isHorizontal{
+        if inline{
             label.setAnchors(top: topAnchor, leading: leadingAnchor, trailing: centerXAnchor, bottom: bottomAnchor, insets: defaultInsets)
             textField.setAnchors(top: topAnchor, leading: centerXAnchor, trailing: trailingAnchor, bottom: bottomAnchor, insets: defaultInsets)
         }
