@@ -36,6 +36,20 @@ extension UIView{
         return subview
     }
     
+    @discardableResult
+    func addSubviewAtLeft(_ subview: UIView, leadingView: UIView? = nil, insets: UIEdgeInsets = Insets.defaultInsets) -> UIView{
+        addSubview(subview)
+        subview.setAnchors(top: topAnchor, leading: leadingView?.trailingAnchor ?? leadingAnchor, bottom: bottomAnchor, insets: insets)
+        return subview
+    }
+    
+    @discardableResult
+    func addSubviewAtRight(_ subview: UIView, trailingView: UIView? = nil, insets: UIEdgeInsets = Insets.defaultInsets) -> UIView{
+        addSubview(subview)
+        subview.setAnchors(top: topAnchor, trailing: trailingView?.leadingAnchor ?? trailingAnchor, bottom: bottomAnchor, insets: insets)
+        return subview
+    }
+    
     public func removeAllSubviews() {
         for subview in subviews {
             subview.removeFromSuperview()

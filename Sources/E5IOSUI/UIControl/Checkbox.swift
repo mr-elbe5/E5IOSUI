@@ -1,11 +1,10 @@
 /*
- E5IOSUI
- Basic classes and extension for IOS
- Copyright: Michael Rönnau mr@elbe5.de
+ Construction Defect Tracker
+ App for tracking construction defects 
+ Copyright: Michael Rönnau mr@elbe5.de 2023
  */
 
 import UIKit
-import E5Data
 
 public protocol CheckboxDelegate{
     func checkboxIsSelected(index: Int, value: String)
@@ -16,6 +15,7 @@ open class Checkbox: UIView{
     public var label = UILabel()
     public var checkboxIcon = CheckboxIcon()
     public var index: Int = 0
+    public var data: AnyObject? = nil
     public var title: String{
         get{
             label.text ?? ""
@@ -35,9 +35,10 @@ open class Checkbox: UIView{
     
     public var delegate: CheckboxDelegate? = nil
     
-    open func setup(title: String, index: Int = 0, data: IdObject? = nil, isOn: Bool = false){
+    open func setup(title: String, index: Int = 0, data: AnyObject? = nil, isOn: Bool = false){
         self.index = index
         self.title = title
+        self.data = data
         self.isOn = isOn
         checkboxIcon.delegate = self
         addSubviewWithAnchors(checkboxIcon, top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, insets: defaultInsets)
@@ -54,7 +55,7 @@ extension Checkbox: OnOffIconDelegate{
     
 }
 
-open class CheckboxIcon: OnOffIcon{
+public class CheckboxIcon: OnOffIcon{
     
     public init(isOn: Bool = false){
         super.init(offImage: UIImage(systemName: "square")!, onImage: UIImage(systemName: "checkmark.square")!)

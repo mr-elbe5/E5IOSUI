@@ -28,6 +28,10 @@ extension UIView{
         Insets.smallInsets
     }
     
+    public var wideInsets : UIEdgeInsets{
+        Insets.wideInsets
+    }
+    
     public var doubleInsets : UIEdgeInsets{
         Insets.doubleInsets
     }
