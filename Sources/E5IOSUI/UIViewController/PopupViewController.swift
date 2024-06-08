@@ -41,7 +41,7 @@ open class PopupViewController: UIViewController {
         headerView.backgroundColor = .systemBackground
         if let title = title{
             let label = UILabel(header: title)
-            headerView.addSubviewWithAnchors(label, top: headerView.topAnchor, bottom: headerView.bottomAnchor, insets: defaultInsets)
+            headerView.addSubviewWithAnchors(label, top: headerView.topAnchor, insets: defaultInsets)
                 .centerX(headerView.centerXAnchor)
             titleLabel = label
         }
