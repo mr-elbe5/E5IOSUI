@@ -9,6 +9,7 @@ import UIKit
 open class PopupViewController: UIViewController {
     
     public var headerView : UIView? = nil
+    public var titleLabel: UILabel? = nil
     
     public var closeButton = UIButton().asIconButton("xmark", color: .label)
     
@@ -42,8 +43,9 @@ open class PopupViewController: UIViewController {
             let label = UILabel(header: title)
             headerView.addSubviewWithAnchors(label, top: headerView.topAnchor, bottom: headerView.bottomAnchor, insets: defaultInsets)
                 .centerX(headerView.centerXAnchor)
+            titleLabel = label
         }
-        headerView.addSubviewWithAnchors(closeButton, top: headerView.topAnchor, trailing: headerView.trailingAnchor, bottom: headerView.bottomAnchor, insets: defaultInsets)
+        headerView.addSubviewWithAnchors(closeButton, top: titleLabel?.bottomAnchor ?? headerView.topAnchor, trailing: headerView.trailingAnchor, bottom: headerView.bottomAnchor, insets: defaultInsets)
         closeButton.addAction(UIAction(){ action in
             self.dismiss(animated: true)
         }, for: .touchDown)
