@@ -47,6 +47,17 @@ extension UIViewController{
         self.present(alertController, animated: true)
     }
     
+    public func showDecide(title: String, text: String, onYes: @escaping (() -> Void), onNo: @escaping (() -> Void)){
+        let alertController = UIAlertController(title: title, message: text, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "yes".localize(table: "Base"), style: .default) { action in
+            onYes()
+        })
+        alertController.addAction(UIAlertAction(title: "no".localize(table: "Base"), style: .cancel){ action in
+            onNo()
+        })
+        self.present(alertController, animated: true)
+    }
+    
     public func showDone(title: String, text: String, onApprove: (() -> Void)? = nil){
         let alertController = UIAlertController(title: title, message: text, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "ok".localize(table: "Base"), style: .default){ action in
