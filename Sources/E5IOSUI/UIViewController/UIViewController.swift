@@ -20,6 +20,15 @@ extension UIViewController{
         self.present(alertController, animated: true)
     }
     
+    public func showCancel(title: String, text: String, onCancel: (() -> Void)? = nil) -> UIAlertController{
+        let alertController = UIAlertController(title: title, message: text, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "cancel".localize(table: "Base"),style: .default) { action in
+            onCancel?()
+        })
+        self.present(alertController, animated: true)
+        return alertController
+    }
+    
     public func showDestructiveApprove(title: String, text: String, onApprove: (() -> Void)? = nil){
         let alertController = UIAlertController(title: title, message: text, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "yes".localize(table: "Base"), style: .destructive) { action in
