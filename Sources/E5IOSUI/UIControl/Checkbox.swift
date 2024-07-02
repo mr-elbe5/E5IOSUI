@@ -51,6 +51,12 @@ open class Checkbox: UIView{
         return self
     }
     
+    @discardableResult
+    public func withIconColor(_ color: UIColor) -> Checkbox{
+        checkboxIcon.withIconColor(color)
+        return self
+    }
+    
 }
 
 extension Checkbox: OnOffIconDelegate{
@@ -74,7 +80,7 @@ public class CheckboxIcon: OnOffIcon{
     }
     
     @discardableResult
-    public func withTextColor(_ color: UIColor) -> CheckboxIcon{
+    public func withIconColor(_ color: UIColor) -> CheckboxIcon{
         onColor = color
         offColor = color
         return self
