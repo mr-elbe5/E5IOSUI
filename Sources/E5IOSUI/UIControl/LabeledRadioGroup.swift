@@ -35,5 +35,11 @@ open class LabeledRadioGroup : UIView{
         radioGroup.setAnchors(top: label.bottomAnchor, leading: leadingAnchor, trailing: trailingAnchor, bottom: bottomAnchor, insets: narrowInsets)
     }
     
+    @discardableResult
+    public func withTextColor(_ color: UIColor) -> LabeledRadioGroup{
+        label.textColor = color
+        return self
+    }
+    
 }
 

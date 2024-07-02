@@ -37,4 +37,10 @@ open class LabeledCheckbox : Checkbox{
         addSubviewWithAnchors(label, top: topAnchor, leading: vw.trailingAnchor, bottom: bottomAnchor, insets: defaultInsets)
     }
     
+    @discardableResult
+    public func withTextColor(_ color: UIColor) -> LabeledCheckbox{
+        label.textColor = color
+        return self
+    }
+    
 }

@@ -50,4 +50,10 @@ open class LabeledDatePicker : UIView{
         datePicker.maximumDate = maxDate
     }
     
+    @discardableResult
+    public func withTextColor(_ color: UIColor) -> LabeledDatePicker{
+        label.textColor = color
+        return self
+    }
+    
 }

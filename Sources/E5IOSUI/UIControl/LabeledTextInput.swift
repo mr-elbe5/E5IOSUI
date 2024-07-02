@@ -54,5 +54,11 @@ open class LabeledTextInput : UIView, UITextFieldDelegate{
         textField.text = text
     }
     
+    @discardableResult
+    public func withTextColor(_ color: UIColor) -> LabeledTextInput{
+        label.textColor = color
+        return self
+    }
+    
 }
 

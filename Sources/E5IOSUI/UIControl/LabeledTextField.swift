@@ -47,5 +47,11 @@ open class LabeledTextField : UIView, UITextFieldDelegate{
         textField.text = text
     }
     
+    @discardableResult
+    public func withTextColor(_ color: UIColor) -> LabeledTextField{
+        label.textColor = color
+        return self
+    }
+    
 }
 

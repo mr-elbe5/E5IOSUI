@@ -43,4 +43,10 @@ open class LabeledStepperInput : UIView{
         stepper.maximumValue = Double(maxValue)
     }
     
+    @discardableResult
+    public func withTextColor(_ color: UIColor) -> LabeledStepperInput{
+        label.textColor = color
+        return self
+    }
+    
 }

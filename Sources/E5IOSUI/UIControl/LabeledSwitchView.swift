@@ -43,5 +43,11 @@ open class LabeledSwitchView : UIView{
         switcher.isEnabled = flag
     }
     
+    @discardableResult
+    public func withTextColor(_ color: UIColor) -> LabeledSwitchView{
+        label.textColor = color
+        return self
+    }
+    
 }
 

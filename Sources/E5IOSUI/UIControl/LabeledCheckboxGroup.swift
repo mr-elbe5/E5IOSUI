@@ -40,5 +40,11 @@ open class LabeledCheckboxGroup : UIView{
         checkboxGroup.addCheckbox(cb: cb)
     }
     
+    @discardableResult
+    public func withTextColor(_ color: UIColor) -> LabeledCheckboxGroup{
+        label.textColor = color
+        return self
+    }
+    
 }
 
