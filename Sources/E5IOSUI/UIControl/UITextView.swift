@@ -33,5 +33,11 @@ extension UITextView{
         self.resignFirstResponder()
     }
     
+    @discardableResult
+    public func withTextColor(_ color: UIColor) -> UITextView{
+        self.textColor = color
+        return self
+    }
+    
 }
 

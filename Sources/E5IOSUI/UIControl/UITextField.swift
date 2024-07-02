@@ -29,5 +29,11 @@ extension UITextField{
         self.resignFirstResponder()
     }
     
+    @discardableResult
+    public func withTextColor(_ color: UIColor) -> UITextField{
+        self.textColor = color
+        return self
+    }
+    
 }
 

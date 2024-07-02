@@ -27,5 +27,11 @@ extension UILabel{
         textColor = .label
     }
     
+    @discardableResult
+    public func withTextColor(_ color: UIColor) -> UILabel{
+        self.textColor = color
+        return self
+    }
+    
 }
 
