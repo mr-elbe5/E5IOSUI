@@ -45,6 +45,13 @@ open class Checkbox: UIView{
         addSubviewWithAnchors(label, top: topAnchor, leading: checkboxIcon.trailingAnchor, trailing: trailingAnchor, bottom: bottomAnchor, insets: defaultInsets)
     }
     
+    @discardableResult
+    public func withTextColor(_ color: UIColor) -> Checkbox{
+        label.textColor = color
+        checkboxIcon.withTextColor(color)
+        return self
+    }
+    
 }
 
 extension Checkbox: OnOffIconDelegate{
@@ -65,6 +72,13 @@ public class CheckboxIcon: OnOffIcon{
     
     required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @discardableResult
+    public func withTextColor(_ color: UIColor) -> CheckboxIcon{
+        onColor = color
+        offColor = color
+        return self
     }
     
 }

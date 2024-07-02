@@ -38,8 +38,9 @@ open class LabeledCheckbox : Checkbox{
     }
     
     @discardableResult
-    public func withTextColor(_ color: UIColor) -> LabeledCheckbox{
+    override public func withTextColor(_ color: UIColor) -> LabeledCheckbox{
         label.textColor = color
+        super.withTextColor(color)
         return self
     }
     
