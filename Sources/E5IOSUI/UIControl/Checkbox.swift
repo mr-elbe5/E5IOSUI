@@ -48,7 +48,6 @@ open class Checkbox: UIView{
     @discardableResult
     public func withTextColor(_ color: UIColor) -> Checkbox{
         label.textColor = color
-        checkboxIcon.withTextColor(color)
         return self
     }
     
