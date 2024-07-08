@@ -37,15 +37,15 @@ open class TableViewCell: UITableViewCell{
         cellBody.addSubviewWithAnchors(iconView, top: cellBody.topAnchor, trailing: cellBody.trailingAnchor, insets: smallInsets)
     }
     
-    open func updateCell(isEditing: Bool = false){
-        updateItemView(isEditing: isEditing)
-        updateIconView(isEditing: isEditing)
+    open func updateCell(){
+        updateItemView()
+        updateIconView()
     }
     
-    open func updateIconView(isEditing: Bool){
+    open func updateIconView(){
     }
     
-    open func updateItemView(isEditing: Bool){
+    open func updateItemView(){
     }
     
 }
