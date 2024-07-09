@@ -26,7 +26,7 @@ open class NavTableViewController: NavViewController {
     
     open func createSubheaderView(){
         let subheaderView = UIView()
-        subheaderView.backgroundColor = .white
+        subheaderView.backgroundColor = .secondarySystemBackground
         setupSubheaderView(subheaderView: subheaderView)
         self.subheaderView = subheaderView
     }
