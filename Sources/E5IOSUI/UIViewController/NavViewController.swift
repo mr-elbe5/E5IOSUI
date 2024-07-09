@@ -8,26 +8,11 @@ import UIKit
 
 open class NavViewController: UIViewController {
     
-    public var darkMode = false
-    
-    public init(darkMode: Bool = false){
-        super.init(nibName: nil, bundle: nil)
-        self.darkMode = darkMode
-    }
-    
-    required public init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override open func loadView() {
         super.loadView()
-        if darkMode{
-            view.backgroundColor = .black
-            self.navigationController?.navigationBar.barStyle = .black
-            self.navigationController?.navigationBar.tintColor = .white
-        }
+        self.navigationController?.navigationBar.tintColor = .label
         if let title = self.title{
-            self.navigationItem.titleView = UILabel(text: title).withTextColor(.white)
+            self.navigationItem.titleView = UILabel(text: title)
         }
         let guide = view.safeAreaLayoutGuide
         loadSubviews(guide: guide)
