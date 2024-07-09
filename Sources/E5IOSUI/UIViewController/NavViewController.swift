@@ -18,6 +18,7 @@ open class NavViewController: UIViewController {
     
     override open func loadView() {
         super.loadView()
+        self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.tintColor = .label
         if let title = self.title{
             self.navigationItem.titleView = UILabel(text: title)
