@@ -17,7 +17,6 @@ open class LabeledCheckbox : Checkbox{
         checkboxIcon.delegate = self
         addSubviewWithAnchors(label, top: topAnchor, leading: leadingAnchor, insets: narrowInsets)
         let vw = UIView()
-        vw.backgroundColor = .systemBackground
         vw.setRoundedBorders()
         addSubviewWithAnchors(vw, top: label.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, insets: narrowInsets)
         vw.addSubviewFilling(checkboxIcon, insets: smallInsets)
@@ -30,7 +29,6 @@ open class LabeledCheckbox : Checkbox{
         label.font = .preferredFont(forTextStyle: .headline)
         checkboxIcon.delegate = self
         let vw = UIView()
-        vw.backgroundColor = .systemBackground
         vw.setRoundedBorders()
         addSubviewWithAnchors(vw, top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, insets: narrowInsets)
         vw.addSubviewFilling(checkboxIcon, insets: smallInsets)

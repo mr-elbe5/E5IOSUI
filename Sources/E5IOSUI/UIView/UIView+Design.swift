@@ -8,6 +8,10 @@ import UIKit
 
 extension UIView{
     
+    public var borderColor: UIColor{
+        .lightGray
+    }
+    
     public var transparentColor : UIColor{
         if isDarkMode{
             return UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
@@ -53,7 +57,7 @@ extension UIView{
     
     @discardableResult
     public func setGrayRoundedBorders(radius: CGFloat = 5) -> UIView{
-        layer.borderColor = UIColor.lightGray.cgColor
+        layer.borderColor = borderColor.cgColor
         layer.borderWidth = 0.5
         layer.cornerRadius = radius
         layer.masksToBounds = true

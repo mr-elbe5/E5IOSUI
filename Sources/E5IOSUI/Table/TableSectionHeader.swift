@@ -12,7 +12,6 @@ open class TableSectionHeader : UIView{
         let label = TableSectionHeaderLabel()
         label.text = title
         label.textAlignment = .center
-        label.backgroundColor = .systemBackground
         label.font = UIFont.boldSystemFont(ofSize: 14)
         
         addSubviewCentered(label, centerX: self.centerXAnchor, centerY: self.centerYAnchor)

@@ -23,7 +23,6 @@ open class PopupViewController: UIViewController {
     
     override open func loadView() {
         super.loadView()
-        view.backgroundColor = .systemGroupedBackground
         let guide = view.safeAreaLayoutGuide
         createHeaderView()
         if let headerView = headerView{
@@ -38,7 +37,6 @@ open class PopupViewController: UIViewController {
     }
     
     open func setupHeaderView(headerView: UIView){
-        headerView.backgroundColor = .systemBackground
         if let title = title{
             let label = UILabel(header: title)
             headerView.addSubviewWithAnchors(label, top: headerView.topAnchor, insets: defaultInsets)

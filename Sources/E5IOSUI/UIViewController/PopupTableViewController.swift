@@ -23,7 +23,6 @@ open class PopupTableViewController: PopupViewController {
         tableView.allowsSelection = false
         tableView.allowsSelectionDuringEditing = false
         tableView.separatorStyle = .none
-        tableView.backgroundColor = .systemGray6
     }
     
     open func createSubheaderView(){

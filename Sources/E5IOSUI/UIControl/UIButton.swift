@@ -16,7 +16,7 @@ extension UIButton{
     }
     
     @discardableResult
-    public func asIconButton(_ icon: String, color: UIColor = .darkGray) -> UIButton{
+    public func asIconButton(_ icon: String, color: UIColor = .label) -> UIButton{
         setImage(UIImage(systemName: icon), for: .normal)
         self.tintColor = color
         self.scaleBy(1.25)

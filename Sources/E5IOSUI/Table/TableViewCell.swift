@@ -18,7 +18,6 @@ open class TableViewCell: UITableViewCell{
     override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         isUserInteractionEnabled = true
-        setBackground(.systemGroupedBackground)
         contentView.addSubviewFilling(cellBody, insets: defaultInsets)
         setupCellBody()
         accessoryType = .none
@@ -29,10 +28,8 @@ open class TableViewCell: UITableViewCell{
     }
     
     open func setupCellBody(){
-        cellBody.setBackground(.secondarySystemBackground)
         cellBody.setRoundedBorders()
         cellBody.addSubviewFilling(itemView, insets: .zero)
-        iconView.setBackground(.tertiarySystemBackground).setRoundedEdges()
         cellBody.addSubviewWithAnchors(iconView, top: cellBody.topAnchor, trailing: cellBody.trailingAnchor, insets: smallInsets)
     }
     
