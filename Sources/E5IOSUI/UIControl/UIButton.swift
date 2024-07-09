@@ -8,6 +8,13 @@ import UIKit
 
 extension UIButton{
     
+    public convenience init(name: String, action: UIAction){
+        self.init(frame: .zero)
+        setTitle(name, for: .normal)
+        setTitleColor(.systemBlue, for: .normal)
+        addAction(action, for: .touchDown)
+    }
+    
     @discardableResult
     public func asIconButton(_ icon: String, color: UIColor = .darkGray) -> UIButton{
         setImage(UIImage(systemName: icon), for: .normal)

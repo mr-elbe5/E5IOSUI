@@ -13,4 +13,8 @@ extension UINavigationController {
        viewControllers.count > 1 ? viewControllers[viewControllers.count - 2] : nil
     }
     
+    public var rootViewController: UIViewController? {
+       viewControllers.count > 0 ? viewControllers[0] : nil
+    }
+    
 }
