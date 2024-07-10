@@ -16,14 +16,9 @@ open class NavViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    open func setBlackNavigation(){
-        view.setBackground(.black)
-        self.navigationController?.navigationBar.barStyle = .black
-        self.navigationController?.navigationBar.tintColor = .white
-    }
-    
     override open func loadView() {
         super.loadView()
+        view.setBackground(.systemBackground)
         if let title = self.title{
             self.navigationItem.titleView = UILabel(text: title)
         }
