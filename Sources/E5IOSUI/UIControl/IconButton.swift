@@ -11,11 +11,11 @@ open class IconButton : UIButton{
     
     public var hasBorder: Bool
     
-    public init(icon: String, tintColor: UIColor = .systemBlue, backgroundColor: UIColor? = nil, withBorder: Bool = false){
+    public init(icon: String, tintColor: UIColor = .button, backgroundColor: UIColor? = nil, withBorder: Bool = false){
         self.hasBorder = withBorder
         super.init(frame: .zero)
         setImage(UIImage(systemName: icon)?.withTintColor(tintColor, renderingMode: .alwaysOriginal), for: .normal)
-        setImage(UIImage(systemName: icon)?.withTintColor(.systemGray, renderingMode: .alwaysOriginal), for: .disabled)
+        setImage(UIImage(systemName: icon)?.withTintColor(.buttonDisabled, renderingMode: .alwaysOriginal), for: .disabled)
         self.scaleBy(1.25)
         if let bgcol = backgroundColor{
             self.backgroundColor = bgcol
@@ -27,7 +27,7 @@ open class IconButton : UIButton{
         }
     }
     
-    public init(image: String, tintColor: UIColor = .systemBlue, backgroundColor: UIColor? = nil, withBorder: Bool = true){
+    public init(image: String, tintColor: UIColor = .button, backgroundColor: UIColor? = nil, withBorder: Bool = true){
         self.hasBorder = withBorder
         super.init(frame: .zero)
         setImage(UIImage(named: image), for: .normal)
@@ -41,7 +41,7 @@ open class IconButton : UIButton{
         }
     }
     
-    public func setIcon(icon: String, tintColor: UIColor = .systemBlue){
+    public func setIcon(icon: String, tintColor: UIColor = .button){
         setImage(UIImage(systemName: icon)?.withTintColor(tintColor, renderingMode: .alwaysOriginal), for: .normal)
     }
     

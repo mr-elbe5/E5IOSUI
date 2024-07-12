@@ -71,8 +71,8 @@ public class CheckboxIcon: OnOffIcon{
     
     public init(isOn: Bool = false){
         super.init(offImage: UIImage(systemName: "square")!, onImage: UIImage(systemName: "checkmark.square")!)
-        onColor = .label
-        offColor = .label
+        onColor = .icon
+        offColor = .icon
     }
     
     required public init?(coder: NSCoder) {

@@ -31,7 +31,7 @@ open class LabeledDatePicker : UIView{
         label.numberOfLines = 0
         addSubview(label)
         
-        pickerContainer.backgroundColor = .systemBackground
+        pickerContainer.backgroundColor = .background
         pickerContainer.setRoundedBorders()
         addSubview(pickerContainer)
         

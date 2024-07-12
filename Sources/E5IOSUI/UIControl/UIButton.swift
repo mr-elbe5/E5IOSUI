@@ -11,12 +11,12 @@ extension UIButton{
     public convenience init(name: String, action: UIAction){
         self.init(frame: .zero)
         setTitle(name, for: .normal)
-        setTitleColor(.systemBlue, for: .normal)
+        setTitleColor(.button, for: .normal)
         addAction(action, for: .touchDown)
     }
     
     @discardableResult
-    public func asIconButton(_ icon: String, color: UIColor = .label) -> UIButton{
+    public func asIconButton(_ icon: String, color: UIColor = .icon) -> UIButton{
         setImage(UIImage(systemName: icon), for: .normal)
         self.tintColor = color
         self.scaleBy(1.25)

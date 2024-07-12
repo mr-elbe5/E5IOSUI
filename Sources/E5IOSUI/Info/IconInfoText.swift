@@ -13,7 +13,7 @@ open class IconInfoText : UIView{
     let iconView = UIImageView()
     let iconText = UILabel()
     
-    public init(icon: String, text: String, iconColor : UIColor = .label, leftInset: CGFloat = 0){
+    public init(icon: String, text: String, iconColor : UIColor = .icon, leftInset: CGFloat = 0){
         super.init(frame: .zero)
         iconView.image = UIImage(systemName: icon)
         iconView.tintColor = iconColor
@@ -21,7 +21,7 @@ open class IconInfoText : UIView{
         setup(leftInset: leftInset)
     }
     
-    public init(icon: String, key: String, iconColor : UIColor = .label, leftInset: CGFloat = 0){
+    public init(icon: String, key: String, iconColor : UIColor = .icon, leftInset: CGFloat = 0){
         super.init(frame: .zero)
         iconView.image = UIImage(systemName: icon)
         iconView.tintColor = iconColor
@@ -45,7 +45,7 @@ open class IconInfoText : UIView{
     
     private func setup(leftInset: CGFloat){
         iconText.numberOfLines = 0
-        iconText.textColor = .label
+        iconText.textColor = .text
         addSubviewWithAnchors(iconContainer, top: topAnchor, leading: leadingAnchor, insets: UIEdgeInsets(top: defaultInset, left: leftInset, bottom: defaultInset, right: 0))
             .width(25)
         iconContainer.addSubviewWithAnchors(iconView, top: iconContainer.topAnchor, leading: iconContainer.leadingAnchor, bottom: iconContainer.bottomAnchor, insets: .zero)

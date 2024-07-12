@@ -13,7 +13,7 @@ extension UITextView{
         autocorrectionType = .no
         font = UIFont.preferredFont(forTextStyle: .body)
         adjustsFontForContentSizeCategory = true
-        layer.borderColor = borderColor.cgColor
+        layer.borderColor = UIColor.borderColor.cgColor
         layer.borderWidth = 0.5
         layer.cornerRadius = 5
         layer.masksToBounds = true

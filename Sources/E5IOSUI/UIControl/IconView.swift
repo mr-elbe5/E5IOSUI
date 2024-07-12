@@ -9,7 +9,7 @@ import UIKit
 
 open class IconView : UIImageView{
     
-    public init(icon: String, tintColor: UIColor = .label, backgroundColor: UIColor? = nil){
+    public init(icon: String, tintColor: UIColor = .icon, backgroundColor: UIColor? = nil){
         super.init(frame: .zero)
         self.image = UIImage(systemName: icon)
         self.tintColor = tintColor
@@ -21,7 +21,7 @@ open class IconView : UIImageView{
         }
     }
     
-    public init(image: String, tintColor: UIColor = .label, backgroundColor: UIColor? = nil){
+    public init(image: String, tintColor: UIColor = .icon, backgroundColor: UIColor? = nil){
         super.init(frame: .zero)
         self.image = UIImage(named: image)
         self.tintColor = tintColor

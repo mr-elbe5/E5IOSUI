@@ -27,7 +27,7 @@ open class RadioGroup: UIView{
     
     public init(){
         super.init(frame: .zero)
-        backgroundColor = .systemBackground
+        backgroundColor = .background
         setRoundedBorders()
     }
     

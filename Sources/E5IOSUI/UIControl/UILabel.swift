@@ -16,7 +16,7 @@ extension UILabel{
         self.init()
         self.text = text
         numberOfLines = 0
-        textColor = .label
+        textColor = .text
     }
     
     public convenience init(header: String){

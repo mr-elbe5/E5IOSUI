@@ -16,7 +16,7 @@ open class NavScrollViewController: NavViewController {
     
     override open func loadSubviews(guide: UILayoutGuide) {
         view.addSubviewWithAnchors(scrollView, top: guide.topAnchor, leading: guide.leadingAnchor, trailing: guide.trailingAnchor, bottom: guide.bottomAnchor, insets: .zero)
-        scrollView.backgroundColor = .systemBackground
+        scrollView.backgroundColor = .scrollViewBackground
         scrollView.addSubviewWithAnchors(contentView, top: scrollView.topAnchor, leading: scrollView.leadingAnchor)
         if scrollVertical{
             contentView.bottom(scrollView.bottomAnchor)
