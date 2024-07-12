@@ -20,8 +20,6 @@ extension UIColor{
     public static var iconDisabled = UIColor.label
     public static var button = UIColor.systemBlue
     public static var buttonDisabled = UIColor.systemGray
-    public static var link = UIColor.systemBlue
-    public static var linkDisabled = UIColor.systemGray
     
     public static var borderColor: UIColor = UIColor.lightGray
     
