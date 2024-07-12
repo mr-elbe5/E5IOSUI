@@ -14,7 +14,7 @@ open class NavTableViewController: NavViewController {
     override open func loadSubviews(guide: UILayoutGuide) {
         var topAnchor = guide.topAnchor
         if let subheaderView = subheaderView{
-            view.addSubviewWithAnchors(subheaderView, top: topAnchor, leading: guide.leadingAnchor, trailing: guide.trailingAnchor, insets: .zero)
+            view.addSubviewWithAnchors(subheaderView, top: topAnchor, leading: guide.leadingAnchor, trailing: guide.trailingAnchor, insets: defaultInsets)
             topAnchor = subheaderView.bottomAnchor
         }
         tableView.backgroundColor = .tableBackground
@@ -26,12 +26,13 @@ open class NavTableViewController: NavViewController {
     
     open func createSubheaderView(){
         let subheaderView = UIView()
-        subheaderView.backgroundColor = .subheaderBackground
         setupSubheaderView(subheaderView: subheaderView)
         self.subheaderView = subheaderView
     }
     
     open func setupSubheaderView(subheaderView: UIView){
+        subheaderView.backgroundColor = .subheaderBackground
+        subheaderView.setRoundedEdges()
     }
     
     open func setNeedsUpdate(){
