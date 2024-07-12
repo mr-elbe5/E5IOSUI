@@ -18,13 +18,21 @@ open class NavViewController: UIViewController {
     
     override open func loadView() {
         super.loadView()
-        view.setBackground(.systemBackground)
+        view.setBackground(.background)
+        navigationController?.navigationBar.barStyle = .current
+        navigationController?.navigationBar.backgroundColor = .navbarBackground
+        navigationController?.navigationBar.tintColor = .navbarTint
         if let title = self.title{
             self.navigationItem.titleView = UILabel(text: title)
         }
         let guide = view.safeAreaLayoutGuide
         loadSubviews(guide: guide)
         updateNavigationItems()
+    }
+    
+    open func setBarColors(bar: UINavigationBar?){
+        bar?.tintColor = .text
+        bar?.backgroundColor = .background
     }
     
     open func loadSubviews(guide: UILayoutGuide) {

@@ -14,13 +14,21 @@ extension UIColor{
     public static var cellBackground = UIColor.systemBackground
     public static var scrollViewBackground = UIColor.systemBackground
     public static var sectionBackground = UIColor.systemBackground
+    public static var navbarBackground = UIColor.systemBackground
     
     public static var text = UIColor.label
     public static var icon = UIColor.label
     public static var iconDisabled = UIColor.label
     public static var button = UIColor.systemBlue
     public static var buttonDisabled = UIColor.systemGray
+    public static var navbarTint = UIColor.label
     
     public static var borderColor: UIColor = UIColor.lightGray
+    
+}
+
+extension UIBarStyle{
+    
+    public static var current = UIBarStyle.default
     
 }
