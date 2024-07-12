@@ -10,6 +10,7 @@ extension UIColor{
     
     public static var background = UIColor.systemBackground
     public static var tableBackground = UIColor.systemBackground
+    public static var sectionHeaderBackground = UIColor.systemBackground
     public static var subheaderBackground = UIColor.systemBackground
     public static var cellBackground = UIColor.systemBackground
     public static var scrollViewBackground = UIColor.systemBackground
@@ -22,6 +23,7 @@ extension UIColor{
     public static var button = UIColor.systemBlue
     public static var buttonDisabled = UIColor.systemGray
     public static var navbarTint = UIColor.label
+    public static var sectionHeaderText = UIColor.label
     
     public static var borderColor: UIColor = UIColor.lightGray
     
