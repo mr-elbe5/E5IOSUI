@@ -18,8 +18,9 @@ open class TableViewCell: UITableViewCell{
     override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         isUserInteractionEnabled = true
-        backgroundColor = .systemBackground
-        contentView.backgroundColor = .tertiarySystemBackground
+        backgroundColor = .clear
+        contentView.backgroundColor = .clear
+        cellBody.backgroundColor = .tertiarySystemBackground
         contentView.addSubviewFilling(cellBody, insets: defaultInsets)
         setupCellBody()
         accessoryType = .none
@@ -31,8 +32,8 @@ open class TableViewCell: UITableViewCell{
     
     open func setupCellBody(){
         cellBody.setRoundedBorders()
-        cellBody.addSubviewFilling(itemView, insets: .zero)
         cellBody.addSubviewWithAnchors(iconView, top: cellBody.topAnchor, trailing: cellBody.trailingAnchor, insets: smallInsets)
+        cellBody.addSubviewWithAnchors(itemView, top: iconView.bottomAnchor, trailing: cellBody.trailingAnchor, bottom: cellBody.bottomAnchor, insets: .zero)
     }
     
     open func updateCell(){
