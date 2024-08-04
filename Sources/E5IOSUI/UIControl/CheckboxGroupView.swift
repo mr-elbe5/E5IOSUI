@@ -31,7 +31,7 @@ open class CheckboxGroupView: UIView{
     
     public init(){
         super.init(frame: .zero)
-        backgroundColor = .secondarySystemBackground
+        backgroundColor = .tertiarySystemBackground
         setRoundedBorders()
     }
     

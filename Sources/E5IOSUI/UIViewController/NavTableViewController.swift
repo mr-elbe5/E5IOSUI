@@ -31,7 +31,7 @@ open class NavTableViewController: NavViewController {
     }
     
     open func setupSubheaderView(subheaderView: UIView){
-        subheaderView.backgroundColor = .secondarySystemBackground
+        subheaderView.backgroundColor = .tertiarySystemBackground
         subheaderView.setRoundedEdges()
     }
     
