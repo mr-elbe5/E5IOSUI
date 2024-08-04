@@ -19,7 +19,7 @@ open class TableViewCell: UITableViewCell{
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         isUserInteractionEnabled = true
         backgroundColor = .systemBackground
-        contentView.backgroundColor = .systemBackground
+        contentView.backgroundColor = .tertiarySystemBackground
         contentView.addSubviewFilling(cellBody, insets: defaultInsets)
         setupCellBody()
         accessoryType = .none
