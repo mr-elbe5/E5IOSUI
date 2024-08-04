@@ -57,8 +57,8 @@ open class RadioButton: OnOffIcon{
     
     public init(isOn: Bool = false){
         super.init(offImage: UIImage(systemName: "circle")!, onImage: UIImage(systemName: "record.circle")!)
-        onColor = .icon
-        offColor = .icon
+        onColor = .label
+        offColor = .label
     }
     
     required public init?(coder: NSCoder) {

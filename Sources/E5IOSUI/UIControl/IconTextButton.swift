@@ -11,7 +11,7 @@ open class IconTextButton : UIButton{
     
     public var hasBorder: Bool
     
-    public init(icon: String, text: String, tintColor: UIColor = .button, backgroundColor: UIColor? = .background, withBorder: Bool = true){
+    public init(icon: String, text: String, tintColor: UIColor = .label, backgroundColor: UIColor? = .secondarySystemBackground, withBorder: Bool = true){
         self.hasBorder = withBorder
         super.init(frame: .zero)
         setImage(UIImage(systemName: icon)?.withTintColor(tintColor, renderingMode: .alwaysOriginal), for: .normal)

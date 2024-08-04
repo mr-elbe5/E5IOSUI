@@ -16,7 +16,7 @@ open class InfoText : UIView{
         super.init(frame: .zero)
         self.text.text = text
         self.text.numberOfLines = 0
-        self.text.textColor = .text
+        self.text.textColor = .label
         addSubviewWithAnchors(self.text, top: topAnchor, leading: leadingAnchor, trailing: trailingAnchor, bottom: bottomAnchor, insets: UIEdgeInsets(top: defaultInset, left: leftInset, bottom: defaultInset, right: 0))
     }
     
@@ -24,7 +24,7 @@ open class InfoText : UIView{
         super.init(frame: .zero)
         self.text.text = key.localize(table: "Info")
         self.text.numberOfLines = 0
-        self.text.textColor = .text
+        self.text.textColor = .label
         addSubviewWithAnchors(self.text, top: topAnchor, leading: leadingAnchor, trailing: trailingAnchor, bottom: bottomAnchor, insets: UIEdgeInsets(top: defaultInset, left: leftInset, bottom: defaultInset, right: 0))
     }
     

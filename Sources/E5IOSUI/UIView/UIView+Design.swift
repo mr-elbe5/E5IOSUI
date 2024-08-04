@@ -36,7 +36,7 @@ extension UIView{
     
     @discardableResult
     public func setGrayRoundedBorders(radius: CGFloat = 5) -> UIView{
-        layer.borderColor = UIColor.borderColor.cgColor
+        layer.borderColor = UIColor.systemGray.cgColor
         layer.borderWidth = 0.5
         layer.cornerRadius = radius
         layer.masksToBounds = true

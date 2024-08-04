@@ -18,8 +18,8 @@ open class TableViewCell: UITableViewCell{
     override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         isUserInteractionEnabled = true
-        backgroundColor = .tableBackground
-        contentView.backgroundColor = .tableBackground
+        backgroundColor = .systemBackground
+        contentView.backgroundColor = .systemBackground
         contentView.addSubviewFilling(cellBody, insets: defaultInsets)
         setupCellBody()
         accessoryType = .none

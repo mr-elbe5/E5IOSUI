@@ -15,9 +15,9 @@ open class SectionLine: UIControl{
         label = UILabel(text: name)
         super.init(frame: .zero)
         setGrayRoundedBorders(radius: 10)
-        setBackground(.background)
+        setBackground(.secondarySystemBackground)
         addSubviewAtLeft(label)
-        let linkButton = IconButton(icon: "chevron.right", tintColor: .button)
+        let linkButton = IconButton(icon: "chevron.right", tintColor: .systemBlue)
         linkButton.addAction(action, for: .touchDown)
         addSubviewWithAnchors(linkButton, trailing: trailingAnchor, insets: wideInsets).centerY(centerYAnchor)
     }

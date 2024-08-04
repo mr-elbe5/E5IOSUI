@@ -10,7 +10,7 @@ open class SectionView: UIView{
     
     public init(){
         super.init(frame: .zero)
-        backgroundColor = .sectionBackground
+        backgroundColor = .secondarySystemBackground
         setRoundedBorders()
     }
     

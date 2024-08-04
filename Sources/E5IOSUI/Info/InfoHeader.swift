@@ -17,7 +17,7 @@ open class InfoHeader : UIView{
         self.text.text = text
         self.text.font = .preferredFont(forTextStyle: .headline)
         self.text.numberOfLines = 0
-        self.text.textColor = .text
+        self.text.textColor = .label
         addSubviewWithAnchors(self.text, top: topAnchor, leading: leadingAnchor, trailing: trailingAnchor, bottom: bottomAnchor, insets: UIEdgeInsets(top: defaultInset, left: leftInset, bottom: defaultInset, right: 0))
     }
     
@@ -26,7 +26,7 @@ open class InfoHeader : UIView{
         self.text.text = key.localize(table: "Info")
         self.text.font = .preferredFont(forTextStyle: .headline)
         self.text.numberOfLines = 0
-        self.text.textColor = .text
+        self.text.textColor = .label
         addSubviewWithAnchors(self.text, top: topAnchor, leading: leadingAnchor, trailing: trailingAnchor, bottom: bottomAnchor, insets: UIEdgeInsets(top: defaultInset, left: leftInset, bottom: defaultInset, right: 0))
     }
     

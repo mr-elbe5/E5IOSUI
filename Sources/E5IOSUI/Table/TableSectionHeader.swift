@@ -10,9 +10,9 @@ open class TableSectionHeader : UIView{
     
     open func setupView(title: String){
         let label = TableSectionHeaderLabel()
-        label.backgroundColor = .sectionHeaderBackground
+        label.backgroundColor = .tertiarySystemBackground
         label.text = title
-        label.textColor = .sectionHeaderText
+        label.textColor = .label
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 14)
         label.setRoundedEdges(radius: 5)

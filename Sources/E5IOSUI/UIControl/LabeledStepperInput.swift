@@ -29,7 +29,7 @@ open class LabeledStepperInput : UIView{
         label.numberOfLines = 0
         addSubview(label)
         
-        stepper.backgroundColor = .background
+        stepper.backgroundColor = .secondarySystemBackground
         stepper.setRoundedBorders()
         self.value = value
         addSubview(stepper)
