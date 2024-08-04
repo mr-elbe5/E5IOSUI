@@ -33,7 +33,7 @@ open class TableViewCell: UITableViewCell{
     open func setupCellBody(){
         cellBody.setRoundedBorders()
         cellBody.addSubviewWithAnchors(iconView, top: cellBody.topAnchor, trailing: cellBody.trailingAnchor, insets: smallInsets)
-        cellBody.addSubviewWithAnchors(itemView, top: iconView.bottomAnchor, trailing: cellBody.trailingAnchor, bottom: cellBody.bottomAnchor, insets: .zero)
+        cellBody.addSubviewWithAnchors(itemView, top: iconView.bottomAnchor, leading: cellBody.leadingAnchor, trailing: cellBody.trailingAnchor, bottom: cellBody.bottomAnchor, insets: .zero)
     }
     
     open func updateCell(){
